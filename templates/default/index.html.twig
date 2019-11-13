@@ -3,5 +3,90 @@
 {% block title %}De WerkPlaats{% endblock %}
 
 {% block body %}
-yeet
+<style>
+    body{
+        background-image: url("{{ asset('images/Group_1.svg') }}");
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logos{
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .content{
+        background-color: white;
+        width: 890px;
+        height: 450px;
+        border-radius: 27px;
+        padding: 50px 0 0 50px;
+
+    }
+
+    .text{
+        font-size: 24px;
+        font-family: Roboto, sans-serif;
+        font-weight: bold;
+        color: #9EA700;
+    }
+
+    .answers{
+        display: flex;
+        flex-direction: column;
+        font-family: Roboto, sans-serif;
+        color: #9EA700;
+        font-size: 18px;
+    }
+
+    .input input{
+        width: 25px;
+        height: 25px;
+    }
+
+    .buttons{
+        margin-top: 10px;
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .buttons button{
+        font-size: 19px;
+        width: 126px;
+        height: 57px;
+        border-radius: 9px;
+        border: none;
+        background-color: #223343;
+        color: white;
+    }
+
+</style>
+
+<div class="logos">
+    <img src="{{ asset('images/HHS.svg') }}" alt="logo" width="230">
+    <img src="{{ asset('images/Mborijnland.svg') }}" alt="logo" width="230">
+</div>
+
+<div class="content">
+    <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</div>
+    <form class="answers">
+        <div class="input"><input type="checkbox">In enim justo</div>
+        <div class="input"><input type="checkbox">In enim justo</div>
+        <div class="input"><input type="checkbox">In enim justo</div>
+        <div class="input"><input type="checkbox">In enim justo</div>
+    </form>
+</div>
+
+<div class="buttons">
+        <button class="prev">Previous</button>
+        <button class="next">Next</button>
+</div>
+
 {% endblock %}
