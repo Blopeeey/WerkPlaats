@@ -4,89 +4,119 @@
 
 {% block body %}
 <style>
-    body{
-        background-image: url("{{ asset('images/Group_1.svg') }}");
-        background-size: cover;
+    html, body {
+        background-color: #BABABA;
+        margin: 0;
+        padding: 0;
+    }
+
+    .carsection {
+        width: 100vw;
+        height: 300px;
+
+        background-color: #FFFFFF;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+    }
+
+    .carcolumn {
+        width: 20%;
+
+        display: flex;
+        align-items: left;
         flex-direction: column;
+        justify-content: center;
+    }
+
+    .carrow {
+        display: flex;
         align-items: center;
     }
 
-    .logos{
-        display: flex;
-        justify-content: space-between;
-        width: 35%;
-        padding-top: 30px;
-        padding-bottom: 30px;
+    .carimage {
+        min-width: 40px;
+        min-height: 40px;
+        margin: 10px;
     }
 
-    .content{
-        background-color: white;
-        width: 890px;
-        height: 450px;
-        border-radius: 27px;
-        padding: 50px 0 0 50px;
+    .cartitle {
+        margin-top: 0;
+        margin-bottom: 0;
 
-    }
-
-    .text{
-        font-size: 24px;
-        font-family: Roboto, sans-serif;
+        font-family: "Karla", sans-serif;
+        font-style: normal;
         font-weight: bold;
-        color: #9EA700;
+        font-size: 20px;
+        letter-spacing: 0.1em;
+
+        padding: 0;
     }
 
-    .answers{
-        display: flex;
-        flex-direction: column;
-        font-family: Roboto, sans-serif;
-        color: #9EA700;
-        font-size: 18px;
+    .cardesc {
+        margin-left: 60px;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: 0.1em;
     }
 
-    .input input{
-        width: 25px;
-        height: 25px;
-    }
+    @media screen and (max-width: 1000px) {
+        .carsection {
+            flex-direction: column;
+            align-items: center;
 
-    .buttons{
-        margin-top: 10px;
-        width: 70%;
-        display: flex;
-        justify-content: space-around;
-    }
+            height: auto;
+            padding-bottom: 10px;
+        }
 
-    .buttons button{
-        font-size: 19px;
-        width: 126px;
-        height: 57px;
-        border-radius: 9px;
-        border: none;
-        background-color: #223343;
-        color: white;
-    }
+        .carcolumn {
+            min-width: 50%;
+            margin-top: 10px;
+            margin-bottom: 10px;
 
+            display: flex;
+            align-items: left;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .carimage {
+            min-width: 40px;
+            width: 40px;
+            min-height: 40px;
+            height: 40px;
+            margin: 10px;
+        }
+    }
 </style>
 
-<div class="logos">
-    <img src="{{ asset('images/HHS.svg') }}" alt="logo" width="230">
-    <img src="{{ asset('images/Mborijnland.svg') }}" alt="logo" width="230">
-</div>
-
-<div class="content">
-    <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</div>
-    <form class="answers">
-        <div class="input"><input type="checkbox">In enim justo</div>
-        <div class="input"><input type="checkbox">In enim justo</div>
-        <div class="input"><input type="checkbox">In enim justo</div>
-        <div class="input"><input type="checkbox">In enim justo</div>
-    </form>
-</div>
-
-<div class="buttons">
-        <button class="prev">Previous</button>
-        <button class="next">Next</button>
+<div class="carsection">
+    <div class="carcolumn">
+        <div class="carrow">
+            <img class="carimage" src="{{ asset('images/car.svg') }}">
+            <p class="cartitle">Lorem Ipsum is simply dummy</p>
+        </div>
+        <p class="cardesc">Contrary to popular belief, Lorem Ipsum is not simply random text. </p>
+    </div>
+    <div class="carcolumn">
+        <div class="carrow">
+            <img class="carimage" src="{{ asset('images/car.svg') }}">
+            <p class="cartitle">Lorem Ipsum is simply dummy</p>
+        </div>
+        <p class="cardesc">Contrary to popular belief, Lorem Ipsum is not simply random text. </p>
+    </div>
+    <div class="carcolumn">
+        <div class="carrow">
+            <img class="carimage" src="{{ asset('images/car.svg') }}">
+            <p class="cartitle">Lorem Ipsum is simply dummy</p>
+        </div>
+        <p class="cardesc">Contrary to popular belief, Lorem Ipsum is not simply random text. </p>
+    </div>
 </div>
 
 {% endblock %}
