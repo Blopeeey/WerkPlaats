@@ -99,6 +99,7 @@
         padding-bottom: 20px;
         background-color: #F2F2F2;
 
+        width: 100vw;
         min-height: 300px;
 
         display: flex;
@@ -173,6 +174,39 @@
             width: 80%;
         }
     }
+
+    .cooperationsection {
+        width: 100vw;
+        height: 300px;
+
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .cooperationtitle {
+        font-family: "Karla", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 49px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+        text-align: center;
+
+        margin: 0;
+    }
+
+    .logocontainer {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .logo {
+        height: 70px;
+    }
 </style>
 
 <div class="carsection">
@@ -212,6 +246,14 @@
         Daarmee is de Dutch Innovation Factory een Playground voor digital Innovators geworden. Een warm welkom met onze vraag aan jou “hoe wordt jij een Playground voor digital Innovators.
         </p>
         <button class="videobutton">Lees meer</button>
+    </div>
+</div>
+
+<div class="cooperationsection">
+    <p class="cooperationtitle">In samenwerking met</p>
+    <div class="logocontainer">
+        <img class="logo" src="{{ asset('images/HHS.svg') }}">
+        <img class="logo" src="{{ asset('images/Mborijnland.svg') }}">
     </div>
 </div>
 
