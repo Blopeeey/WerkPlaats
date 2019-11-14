@@ -4,89 +4,285 @@
 
 {% block body %}
 <style>
-    body{
-        background-image: url("{{ asset('images/Group_1.svg') }}");
-        background-size: cover;
+    html, body {
+        background-color: #BABABA;
+        margin: 0;
+        padding: 0;
+    }
+    .carsection {
+        width: 100vw;
+        height: 300px;
+        background-color: #FFFFFF;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+    }
+    .carcolumn {
+        width: 20%;
+        display: flex;
+        align-items: left;
         flex-direction: column;
+        justify-content: center;
+    }
+    .carrow {
+        display: flex;
         align-items: center;
     }
-
-    .logos{
-        display: flex;
-        justify-content: space-between;
-        width: 35%;
-        padding-top: 30px;
-        padding-bottom: 30px;
+    .carimage {
+        min-width: 40px;
+        min-height: 40px;
+        margin: 10px;
     }
-
-    .content{
-        background-color: white;
-        width: 890px;
-        height: 450px;
-        border-radius: 27px;
-        padding: 50px 0 0 50px;
-
-    }
-
-    .text{
-        font-size: 24px;
-        font-family: Roboto, sans-serif;
+    .cartitle {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: "Karla", sans-serif;
+        font-style: normal;
         font-weight: bold;
-        color: #9EA700;
+        font-size: 20px;
+        letter-spacing: 0.1em;
+        padding: 0;
     }
-
-    .answers{
+    .cardesc {
+        margin-left: 60px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: 0.1em;
+    }
+    @media screen and (max-width: 1000px) {
+        .carsection {
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            padding-bottom: 10px;
+        }
+        .carcolumn {
+            min-width: 50%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: left;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .carimage {
+            min-width: 40px;
+            width: 40px;
+            min-height: 40px;
+            height: 40px;
+            margin: 10px;
+        }
+    }
+    .videosection {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #F2F2F2;
+        width: 100vw;
+        min-height: 300px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .video {
+        max-width: 600px;
+        min-width: 300px;
+        width: 40%;
+    }
+    .videotext {
+        width: 40%;
+    }
+    .videotitle {
+        font-family: "Karla", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 37px;
+        text-transform: uppercase;
+    }
+    .videodesc {
+        font-family: "Karla", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .videobutton {
+        background-color: #FEED02;
+        border: none;
+        border-radius: 50px;
+        font-family: "Karla", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 10px 50px;
+    }
+    @media screen and (max-width: 950px) {
+        .videosection {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #F2F2F2;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .video {
+            width: 80%;
+        }
+        .videotext {
+            width: 80%;
+        }
+    }
+    .cooperationsection {
+        width: 100vw;
+        height: 300px;
+        background-color: #FFFFFF;
         display: flex;
         flex-direction: column;
-        font-family: Roboto, sans-serif;
-        color: #9EA700;
-        font-size: 18px;
+        justify-content: space-evenly;
     }
-
-    .input input{
-        width: 25px;
-        height: 25px;
+    .cooperationtitle {
+        font-family: "Karla", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 49px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
     }
-
-    .buttons{
-        margin-top: 10px;
-        width: 70%;
+    .logocontainer {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
+    }
+    .logo {
+        height: 70px;
     }
 
-    .buttons button{
-        font-size: 19px;
-        width: 126px;
-        height: 57px;
-        border-radius: 9px;
-        border: none;
-        background-color: #223343;
+    .text-white{
+        font-family: "Karla", sans-serif;
+        text-decoration: none;
+        color: #FFFFFF;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .text-uppercase{
+        text-transform: uppercase;
         color: white;
+        font-family: "Karla", sans-serif;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
     }
-
 </style>
 
-<div class="logos">
-    <img src="{{ asset('images/HHS.svg') }}" alt="logo" width="230">
-    <img src="{{ asset('images/Mborijnland.svg') }}" alt="logo" width="230">
+<div class="carsection">
+    <div class="carcolumn">
+        <div class="carrow">
+            <img class="carimage" src="{{ asset('images/car.svg') }}">
+            <p class="cartitle">Lorem Ipsum is simply dummy</p>
+        </div>
+        <p class="cardesc">Contrary to popular belief, Lorem Ipsum is not simply random text. </p>
+    </div>
+    <div class="carcolumn">
+        <div class="carrow">
+            <img class="carimage" src="{{ asset('images/car.svg') }}">
+            <p class="cartitle">Lorem Ipsum is simply dummy</p>
+        </div>
+        <p class="cardesc">Contrary to popular belief, Lorem Ipsum is not simply random text. </p>
+    </div>
+    <div class="carcolumn">
+        <div class="carrow">
+            <img class="carimage" src="{{ asset('images/car.svg') }}">
+            <p class="cartitle">Lorem Ipsum is simply dummy</p>
+        </div>
+        <p class="cardesc">Contrary to popular belief, Lorem Ipsum is not simply random text. </p>
+    </div>
 </div>
 
-<div class="content">
-    <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</div>
-    <form class="answers">
-        <div class="input"><input type="checkbox">In enim justo</div>
-        <div class="input"><input type="checkbox">In enim justo</div>
-        <div class="input"><input type="checkbox">In enim justo</div>
-        <div class="input"><input type="checkbox">In enim justo</div>
-    </form>
+<div class="videosection">
+    <video class="video" controls>
+        <source src="" type="video/mp4">
+        <source src="" type="video/ogg">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="videotext">
+        <p class="videotitle">De oplossing voor jouw onderneming</p>
+        <p class="videodesc">Door ICT-onderwijs, onderzoek, overheid  en bedrijven te verbinden in één gebouw ontstaat een broedplaats vol interactie en samenwerking. Zo creëren wij een innovatieve plek waar kennisdeling plaatsvindt, innovaties ontstaan en co-creaties geboren worden.
+
+        Daarmee is de Dutch Innovation Factory een Playground voor digital Innovators geworden. Een warm welkom met onze vraag aan jou “hoe wordt jij een Playground voor digital Innovators.
+        </p>
+        <button class="videobutton">Lees meer</button>
+    </div>
 </div>
 
-<div class="buttons">
-        <button class="prev">Previous</button>
-        <button class="next">Next</button>
+<div class="cooperationsection">
+    <p class="cooperationtitle">In samenwerking met</p>
+    <div class="logocontainer">
+        <img class="logo" src="{{ asset('images/HHS.svg') }}">
+        <img class="logo" src="{{ asset('images/Mborijnland.svg') }}">
+    </div>
 </div>
+
+
+        <footer class="footer" style='background-color: #000;'>
+        <div class="footer-container">
+            <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3">
+                 <img class="dif-logo" src="{{ asset('images/DIFLogo.svg') }}">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus facilisis vel ultrices vestibulum vel scelerisque donec proin magna.</p>
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Menu</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="text-white" href="#!">Home</a>
+                    </li>
+                    <li>
+                        <a class="text-white" href="#!">Over de DIF</a>
+                    </li>
+                    <li>
+                        <a class="text-white" href="#!">Inschrijven</a>
+                    </li>
+                    <li>
+                        <a class="text-white" href="#!">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Contact</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class='text-white' href="mailto:info@dutchinnovationfactory.nl">info@dutchinnovationfactory.nl</a>
+                    </li>
+                    <li>
+                        <a class='text-white' href="tel:088 222 1777">088 222 1777</a>
+                    </li>
+                    <li>
+                        <p>Van Doornenplantsoen 11</br>2722 ZA Zoetermeer</p>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 text-white pt-5">© DutchInnovationFactory |
+            <a class="text-white" href="htpps://mborijnland.nl/"> Developed by <span style='font-weight: bold;'>MBORijnland</span></a>
+        </div>
+        </footer>
 
 {% endblock %}
