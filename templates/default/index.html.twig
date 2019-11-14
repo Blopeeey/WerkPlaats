@@ -3,90 +3,110 @@
 {% block title %}De WerkPlaats{% endblock %}
 
 {% block body %}
-<style>
-    body{
-        background-image: url("{{ asset('images/Group_1.svg') }}");
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
+    <style>
+        body{
+            background-image: url("{{ asset('images/background.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
-    .logos{
-        display: flex;
-        justify-content: space-between;
-        width: 35%;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
+        nav{
 
-    .content{
-        background-color: white;
-        width: 890px;
-        height: 450px;
-        border-radius: 27px;
-        padding: 50px 0 0 50px;
+        }
 
-    }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-    .text{
-        font-size: 24px;
-        font-family: Roboto, sans-serif;
-        font-weight: bold;
-        color: #9EA700;
-    }
+        li{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 30px;
+            text-decoration: none;
+            float: left;
+            font-size: 20px;
+            font-family: 'Karla', sans-serif;
+        }
 
-    .answers{
-        display: flex;
-        flex-direction: column;
-        font-family: Roboto, sans-serif;
-        color: #9EA700;
-        font-size: 18px;
-    }
+        .RightNav li a{
+            text-decoration: none;
+            color: #FFFFFF;
+        }
 
-    .input input{
-        width: 25px;
-        height: 25px;
-    }
+        .RightNav li a:hover{
+            text-decoration: none;
+            color: lightgoldenrodyellow;
+        }
 
-    .buttons{
-        margin-top: 10px;
-        width: 70%;
-        display: flex;
-        justify-content: space-around;
-    }
+        .RightNav{
+            margin: 10px 200px;
+        }
 
-    .buttons button{
-        font-size: 19px;
-        width: 126px;
-        height: 57px;
-        border-radius: 9px;
-        border: none;
-        background-color: #223343;
-        color: white;
-    }
+        .LeftNav{
+            margin: 0 200px;
+        }
 
-</style>
+        .content{
+            font-family: 'Karla', sans-serif;
+            color: white;
+            width: 477px;
+            height: 122px;
+            margin: 8% 18%;
+        }
 
-<div class="logos">
-    <img src="{{ asset('images/HHS.svg') }}" alt="logo" width="230">
-    <img src="{{ asset('images/Mborijnland.svg') }}" alt="logo" width="230">
-</div>
+        .content p{
+            font-size: 20px;
+            line-height: 23px;
+            font-weight: lighter;
+            align-items: center;
+            letter-spacing: 0.1em;
+        }
 
-<div class="content">
-    <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</div>
-    <form class="answers">
-        <div class="input"><input type="checkbox">In enim justo</div>
-        <div class="input"><input type="checkbox">In enim justo</div>
-        <div class="input"><input type="checkbox">In enim justo</div>
-        <div class="input"><input type="checkbox">In enim justo</div>
-    </form>
-</div>
+        .leesmeer{
+            border: none;
+            background-color: #D9C900;
+            width: 200px;
+            height: 50px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 15px;
+        }
 
-<div class="buttons">
-        <button class="prev">Previous</button>
-        <button class="next">Next</button>
-</div>
+        .video{
+            display: flex;
+            margin: -17% 65%;
+        }
+    </style>
+
+    <nav>
+        <ul>
+            <div class="LeftNav">
+                <li style="position: absolute;"><img src="{{ asset('images/logo.svg') }}" width="62px"></li>
+                <li style="text-align: left; font-size: 20px; margin: 0 80px;">Dutch<br/> Innovation<br/> Factory</li>
+            </div>
+            <div class="RightNav">
+                <li style="float: right;"><a href="">Vragenlijst</a></li>
+                <li style="float: right;"><a href="">Over de DIF</a></li>
+                <li style="float: right;"><a href="">Home</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <span style="font-size: 52px;">Dutch Innovation <br/>Factory</span>
+        <p>Integer est dolor, tempor vitae congue dignissim, euismod sit amet magna. Vivamus porttitor urna ornare tortor commodo, nec congue ante iaculis. Pellentesque id.</p>
+        <button class="leesmeer">LEES MEER</button>
+    </div>
+
+    <div class="video">
+        <video width="300" controls>
+            <source src="{{ asset('images/video.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+
 
 {% endblock %}
