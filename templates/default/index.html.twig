@@ -21,20 +21,14 @@
     }
 
     nav {
+        position: fixed;
+        z-index: 100;
         width: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         padding-top: 10px;
         padding-bottom: 10px;
-    }
-
-    .nav-color {
-        background-color: #FFFFFF;
-    }
-
-    .nav-transparent {
-        background-color: #00000000;
     }
 
     .navmenu {
@@ -327,12 +321,12 @@
 
 <nav id="nav">
     <div>
-        <a href=""><img class="logo" src="{{ asset('images/logo.png') }}"></a>
+        <a href=""><img class="logo" id="navlogo" src="{{ asset('images/logo.png') }}"></a>
     </div>
     <div class="navmenu">
-        <a href="">Home</a>
-        <a href="">Over de DIF</a>
-        <a href="">Vragenlijst</a>
+        <a id="navoption" href="">Home</a>
+        <a id="navoption" href="">Over de DIF</a>
+        <a id="navoption" href="">Vragenlijst</a>
     </div>
 </nav>
 
@@ -396,5 +390,29 @@
         <img class="logo" src="{{ asset('images/Mborijnland.svg') }}">
     </div>
 </div>
+
+<script>
+    const nav = document.querySelector('nav');
+    const navLogo = document.getElementById('navlogo');
+    const navOptions = document.querySelectorAll('#navoption');
+
+    window.addEventListener('scroll', function(event) {
+        event.preventDefault();
+
+        if (window.scrollY >= 50) {
+            nav.style.backgroundColor = '#FFFFFF';
+            navlogo.src = "{{ asset('images/logo-blacktext.png') }}";
+            for (i = 0; i < navOptions.length; ++i) {
+                navOptions[i].style.color = "#000000";
+            }
+        } else {
+            nav.style.backgroundColor = 'transparent';
+            navlogo.src = "{{ asset('images/logo.png') }}";
+            for (i = 0; i < navOptions.length; ++i) {
+                navOptions[i].style.color = "#FFFFFF";
+            }
+        }
+    });
+</script>
 
 {% endblock %}
