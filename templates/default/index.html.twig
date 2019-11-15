@@ -48,26 +48,35 @@
         text-decoration: none;
     }
 
+    .hamburger {
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+        min-height: 30px;
+        background-image: url("{{ asset('images/hamburger-white.svg') }}");
+        display: none;
+
+        cursor: pointer;
+    }
+
     @media screen and (max-width: 800px) {
         nav {
-            align-items: flex-start;
-            flex-direction: column;
+            justify-content: space-around;
             padding: 10px;
         }
 
-        .navmenu {
-            margin-top: 10px;
-            width: 100px;
+        .hamburger {
+            display: block;
         }
-    }
 
-    @media screen and (max-width: 500px) {
         .navmenu {
-            margin-top: 10px;
-            width: 100px;
+            position: absolute;
+            width: 100%;
+            top: 90px;
             flex-direction: column;
-            justify-content: left;
-            align-items: flex-start;
+            align-items: center;
+            padding-bottom: 10px;
+            display: none;
         }
     }
 
@@ -323,7 +332,8 @@
     <div>
         <a href=""><img class="logo" id="navlogo" src="{{ asset('images/logo.png') }}"></a>
     </div>
-    <div class="navmenu">
+    <div id="hamburger" class="hamburger"></div>
+    <div id="navMenu" class="navmenu">
         <a id="navoption" href="">Home</a>
         <a id="navoption" href="">Over de DIF</a>
         <a id="navoption" href="">Vragenlijst</a>
@@ -395,22 +405,52 @@
     const nav = document.querySelector('nav');
     const navLogo = document.getElementById('navlogo');
     const navOptions = document.querySelectorAll('#navoption');
+    const hamburger = document.getElementById('hamburger');
+    let hamburgerClicked = false;
+    const navMenu = document.getElementById('navMenu');
 
-    window.addEventListener('scroll', function(event) {
+    window.addEventListener('scroll', function (event) {
         event.preventDefault();
 
         if (window.scrollY >= 50) {
             nav.style.backgroundColor = '#FFFFFF';
+            navMenu.style.backgroundColor = '#FFFFFF';
+            hamburger.style.backgroundImage = "url(\"{{ asset('images/hamburger-black.svg') }}\")";
             navlogo.src = "{{ asset('images/logo-blacktext.png') }}";
             for (i = 0; i < navOptions.length; ++i) {
                 navOptions[i].style.color = "#000000";
             }
         } else {
             nav.style.backgroundColor = 'transparent';
+            navMenu.style.backgroundColor = 'transparent';
+            hamburger.style.backgroundImage = "url(\"{{ asset('images/hamburger-white.svg') }}\")";
             navlogo.src = "{{ asset('images/logo.png') }}";
             for (i = 0; i < navOptions.length; ++i) {
                 navOptions[i].style.color = "#FFFFFF";
             }
+        }
+    });
+
+    hamburger.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (hamburgerClicked === false) {
+            navMenu.style.display = "flex";
+            hamburgerClicked = true;
+        }
+        else {
+            navMenu.style.display = "none";
+            hamburgerClicked = false;
+        }
+    });
+
+    window.addEventListener('resize', function (event) {
+        event.preventDefault();
+        if (window.innerWidth >= 800) {
+            navMenu.style.display = "flex";
+        }
+        else {
+            navMenu.style.display = "none";
+            hamburgerClicked = false;
         }
     });
 </script>
