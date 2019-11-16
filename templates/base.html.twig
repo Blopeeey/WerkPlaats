@@ -7,6 +7,7 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        {% include 'nav.html.twig' with {navType:navType} %}
         {% block body %}
         <p>yeet</p>
         {% endblock %}
