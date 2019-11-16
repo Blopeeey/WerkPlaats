@@ -1,7 +1,14 @@
+/*
+* fonts
+*/
 @font-face {
     font-family: Karla;
     src: url("../fonts/Karla-Regular.ttf");
 }
+
+/*
+* global CSS
+*/
 html, body {
     margin: 0;
     padding: 0;
@@ -14,7 +21,10 @@ body{
     background-attachment: fixed;
 }
 
-nav {
+/*
+* navigation
+*/
+.navigation {
     position: fixed;
     z-index: 100;
     width: 100%;
@@ -25,11 +35,11 @@ nav {
     padding-bottom: 10px;
 }
 
-.nav-nonscrolled {
+.navigation-nonscrolled {
     background-color: transparent;
 }
 
-.nav-scrolled {
+.navigation-scrolled {
     background-color: #FFFFFF;
 }
 
@@ -112,6 +122,9 @@ nav {
     }
 }
 
+/*
+* header
+*/
 .header{
     font-family: 'Karla', sans-serif;
     color: #FFFFFF;
@@ -162,6 +175,9 @@ nav {
     }
 }
 
+/*
+* car section
+*/
 .carsection {
     width: 100%;
     height: 300px;
@@ -246,6 +262,9 @@ nav {
     }
 }
 
+/*
+* video section
+*/
 .videosection {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -327,6 +346,9 @@ nav {
     }
 }
 
+/*
+* co-operation section
+*/
 .cooperationsection {
     width: 100%;
     height: 300px;

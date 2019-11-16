@@ -1,4 +1,4 @@
-const nav = document.querySelector('nav'); // whole nav element
+const nav = document.getElementById('navigation'); // whole nav element
 const navLogo = document.getElementById('navlogo'); // navigation logo
 const navOptions = document.querySelectorAll('#navoption'); // array of navigation options
 const hamburger = document.getElementById('hamburger'); // hamburger menu icon
@@ -12,8 +12,8 @@ window.addEventListener('scroll', function (event) {
     event.preventDefault();
 
     if (window.scrollY >= 50) {
-        nav.classList.add("nav-scrolled");
-        nav.classList.remove("nav-nonscrolled");
+        nav.classList.add("navigation-scrolled");
+        nav.classList.remove("navigation-nonscrolled");
 
         navMenu.classList.add("navmenu-scrolled");
         navMenu.classList.remove("navmenu-nonscrolled");
@@ -27,8 +27,8 @@ window.addEventListener('scroll', function (event) {
             navOptions[i].classList.remove("navoption-nonscrolled");
         }
     } else {
-        nav.classList.add("nav-nonscrolled");
-        nav.classList.remove("nav-scrolled");
+        nav.classList.add("navigation-nonscrolled");
+        nav.classList.remove("navigation-scrolled");
 
         navMenu.classList.add("navmenu-nonscrolled");
         navMenu.classList.remove("navmenu-scrolled");
