@@ -25,15 +25,38 @@ nav {
     padding-bottom: 10px;
 }
 
+.nav-nonscrolled {
+    background-color: transparent;
+}
+
+.nav-scrolled {
+    background-color: #FFFFFF;
+}
+
 .navmenu {
     width: 25%;
     min-width: 500px;
-    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navmenu a {
+.navmenu-nonscrolled {
+    background-color: transparent;
+}
+
+.navmenu-scrolled {
+    background-color: #FFFFFF;
+}
+
+.navmenu-visible {
+    display: flex;
+}
+
+.navmenu-invisible {
+    display: none;
+}
+
+.navoption {
     font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -42,15 +65,30 @@ nav {
     text-decoration: none;
 }
 
+.navoption-nonscrolled {
+    color: #FFFFFF;
+}
+
+.navoption-scrolled {
+    color: #000000;
+}
+
 .hamburger {
     width: 30px;
     min-width: 30px;
     height: 30px;
     min-height: 30px;
-    background-image: url("../images/hamburger-white.svg");
     display: none;
 
     cursor: pointer;
+}
+
+.hamburger-nonscrolled {
+    background-image: url("../images/hamburger-white.svg");
+}
+
+.hamburger-scrolled {
+    background-image: url("../images/hamburger-black.svg");
 }
 
 @media screen and (max-width: 800px) {
