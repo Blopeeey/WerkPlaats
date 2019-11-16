@@ -38,6 +38,7 @@ nav {
     min-width: 500px;
     justify-content: space-between;
     align-items: center;
+    display: flex;
 }
 
 .navmenu-nonscrolled {
@@ -46,14 +47,6 @@ nav {
 
 .navmenu-scrolled {
     background-color: #FFFFFF;
-}
-
-.navmenu-visible {
-    display: flex;
-}
-
-.navmenu-invisible {
-    display: none;
 }
 
 .navoption {
@@ -108,6 +101,13 @@ nav {
         flex-direction: column;
         align-items: center;
         padding-bottom: 10px;
+    }
+   
+    .navmenu-visible {
+        display: flex;
+    }
+
+    .navmenu-invisible {
         display: none;
     }
 }
