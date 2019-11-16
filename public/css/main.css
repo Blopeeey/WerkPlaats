@@ -5,6 +5,9 @@
     font-family: Karla;
     src: url("../fonts/Karla-Regular.ttf");
 }
+/*
+* end fonts
+/*
 
 /*
 * global CSS
@@ -20,6 +23,9 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/*
+* end global CSS
+/*
 
 /*
 * navigation
@@ -121,6 +127,9 @@ body{
         display: none;
     }
 }
+/*
+* end navigation
+/*
 
 /*
 * header
@@ -130,7 +139,7 @@ body{
     color: #FFFFFF;
     width: 100%;
     height: 80vh;
-    min-height: 550px;
+    min-height: 650px;
 
     display: flex;
     justify-content: space-around;
@@ -149,7 +158,7 @@ body{
     width: 25%;
 }
 
-.leesmeer{
+.button--readmore--header{
     border: none;
     background-color: #D9C900;
     width: 200px;
@@ -174,6 +183,9 @@ body{
         display: none;
     }
 }
+/*
+* end header
+/*
 
 /*
 * car section
@@ -261,6 +273,9 @@ body{
         margin: 10px;
     }
 }
+/*
+* end car section
+/*
 
 /*
 * video section
@@ -306,7 +321,7 @@ body{
     line-height: 19px;
 }
 
-.videobutton {
+.button--readmore--videos {
     background-color: #FEED02;
     border: none;
     border-radius: 50px;
@@ -345,6 +360,9 @@ body{
         width: 80%;
     }
 }
+/*
+* end video section
+/*
 
 /*
 * co-operation section
@@ -373,11 +391,14 @@ body{
     margin: 0;
 }
 
-.logocontainer {
+.partnerscontainer {
     display: flex;
     justify-content: space-evenly;
 }
 
-.logo {
+.partnerlogo {
     height: 70px;
 }
+/*
+* end co-operation section
+/*
