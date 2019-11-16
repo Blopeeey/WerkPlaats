@@ -1,11 +1,39 @@
-<nav id="navigation" class="navigation navigation--nonscrolled">
-    <div>
-        <a href=""><img class="logo" id="navlogo" src="images/logo.png"></a>
-    </div>
-    <div id="hamburger" class="hamburger hamburger--nonscrolled"></div>
-    <div id="navMenu" class="navmenu navmenu-nonscrolled navmenu--visible">
-        <a class="navoption navoption--nonscrolled" id="navoption" href="">Home</a>
-        <a class="navoption navoption--nonscrolled" id="navoption" href="">Over de DIF</a>
-        <a class="navoption navoption--nonscrolled" id="navoption" href="">Vragenlijst</a>
-    </div>
-</nav>
+{% if navType is defined %}
+    {% if navType == "header"%}
+        <nav id="navigation" class="navigation navigation--nonscrolled">
+            <div>
+                <a href=""><img class="logo" id="navlogo" src="images/logo.png"></a>
+            </div>
+            <div id="hamburger" class="hamburger hamburger--nonscrolled"></div>
+            <div id="navMenu" class="navmenu navmenu-nonscrolled navmenu--visible">
+                <a class="navoption navoption--nonscrolled" id="navoption" href="">Home</a>
+                <a class="navoption navoption--nonscrolled" id="navoption" href="">Over de DIF</a>
+                <a class="navoption navoption--nonscrolled" id="navoption" href="">Vragenlijst</a>
+            </div>
+        </nav>
+    {% else %}
+        <nav id="navigation" class="navigation navigation--scrolled">
+            <div>
+                <a href=""><img class="logo" id="navlogo" src="images/logo-blacktext.png"></a>
+            </div>
+            <div id="hamburger" class="hamburger hamburger--scrolled"></div>
+            <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
+                <a class="navoption navoption--scrolled" id="navoption" href="">Home</a>
+                <a class="navoption navoption--scrolled" id="navoption" href="">Over de DIF</a>
+                <a class="navoption navoption--scrolled" id="navoption" href="">Vragenlijst</a>
+            </div>
+        </nav>
+    {% endif %}
+{% else %}
+    <nav id="navigation" class="navigation navigation--scrolled">
+        <div>
+            <a href=""><img class="logo" id="navlogo" src="images/logo-blacktext.png"></a>
+        </div>
+        <div id="hamburger" class="hamburger hamburger--scrolled"></div>
+        <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
+            <a class="navoption navoption--scrolled" id="navoption" href="">Home</a>
+            <a class="navoption navoption--scrolled" id="navoption" href="">Over de DIF</a>
+            <a class="navoption navoption--scrolled" id="navoption" href="">Vragenlijst</a>
+        </div>
+    </nav>
+{% endif %}
