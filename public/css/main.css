@@ -35,11 +35,11 @@ body{
     padding-bottom: 10px;
 }
 
-.navigation-nonscrolled {
+.navigation--nonscrolled {
     background-color: transparent;
 }
 
-.navigation-scrolled {
+.navigation--scrolled {
     background-color: #FFFFFF;
 }
 
@@ -51,11 +51,11 @@ body{
     display: flex;
 }
 
-.navmenu-nonscrolled {
+.navmenu--nonscrolled {
     background-color: transparent;
 }
 
-.navmenu-scrolled {
+.navmenu--scrolled {
     background-color: #FFFFFF;
 }
 
@@ -68,11 +68,11 @@ body{
     text-decoration: none;
 }
 
-.navoption-nonscrolled {
+.navoption--nonscrolled {
     color: #FFFFFF;
 }
 
-.navoption-scrolled {
+.navoption--scrolled {
     color: #000000;
 }
 
@@ -86,11 +86,11 @@ body{
     cursor: pointer;
 }
 
-.hamburger-nonscrolled {
+.hamburger--nonscrolled {
     background-image: url("../images/hamburger-white.svg");
 }
 
-.hamburger-scrolled {
+.hamburger--scrolled {
     background-image: url("../images/hamburger-black.svg");
 }
 
@@ -113,11 +113,11 @@ body{
         padding-bottom: 10px;
     }
    
-    .navmenu-visible {
+    .navmenu--visible {
         display: flex;
     }
 
-    .navmenu-invisible {
+    .navmenu--invisible {
         display: none;
     }
 }
