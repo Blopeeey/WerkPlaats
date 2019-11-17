@@ -7,9 +7,18 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% include 'nav.html.twig' %}
-        {% block body %}{% endblock %}
+        {% include 'components/nav.html.twig' with {navType:navType} %}
+        {% block body %}
+        {% endblock %}
         {% block javascripts %}{% endblock %}
-        <script src="{{ asset('scripts/nav.js') }}"></script>
+        {#
+        # determine navigation type
+        #}
+        {% if navType is defined %}
+            {% if navType == "header"%}
+                <script type="module" src="{{ asset('scripts/navcolour.js') }}"></script>
+            {% endif %}
+        {% endif %}
+        <script type="module" src="{{ asset('scripts/navresponsive.js') }}"></script>
     </body>
 </html>

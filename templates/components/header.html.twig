@@ -1,0 +1,38 @@
+<section class="header">
+    <div class="headertext">
+        <h1>
+            {% if title is defined %}
+                {{ title }}
+            {% else %}
+                Exception: title undefined
+            {% endif %}
+        </h1>
+        <p>
+            {% if text is defined %}
+                {{ text }}
+            {% else %}
+                Exception: text undefined
+            {% endif %}
+        </p>
+        {% if button.link is defined %}
+            <a href="{{button.link}}">
+                <button class="button--readmore--header">
+                    {% if button.text is defined %}
+                        {{ button.text}}
+                    {% else %}
+                        click here!
+                    {% endif %}
+                </button>
+            </a>
+        {% endif %}
+    </div>
+    {% if video is defined %}
+        <div class="headervideo">
+            <video width="300" controls>
+                <source src="{{ video }}" type="video/mp4">
+            </video>
+        </div>
+    {% else %}
+        <div></div>
+    {% endif %}
+</section>

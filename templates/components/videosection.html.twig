@@ -1,0 +1,35 @@
+<section class="videosection">
+    {% if sections is defined %}
+        {% for section in sections %}
+            <div class="videocolumn">
+                <video class="video" controls>
+                    <source src="{{ section.video }}" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <div class="videotext">
+                    {% if section.title is defined %}
+                        <p class="videotitle">
+                            {{ section.title }}
+                        </p>
+                    {% endif %}
+                    {% if section.text is defined %}
+                        <p class="videodesc">
+                            {{ section.text }}
+                        </p>
+                    {% endif %}
+                    {% if section.link is defined %}
+                        <a href="{{section.link}}">
+                            <button class="button--readmore--video">
+                                {% if section.linkText is defined %}
+                                    {{ section.linkText}}
+                                {% else %}
+                                    click here!
+                                {% endif %}
+                            </button>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>

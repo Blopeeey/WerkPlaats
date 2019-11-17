@@ -1,0 +1,46 @@
+{% set navOptions = [
+    {"text": "Home", "link":""},
+    {"text": "Over de DIF", "link":""},
+    {"text": "Vragenlijst", "link":""},
+]
+%}
+
+{% if navType is defined %}
+    {% if navType == "header"%}
+        <nav id="navigation" class="navigation navigation--nonscrolled">
+            <div>
+                <a href=""><img class="logo" id="navlogo" src="images/logo.png"></a>
+            </div>
+            <div id="hamburger" class="hamburger hamburger--nonscrolled"></div>
+            <div id="navMenu" class="navmenu navmenu-nonscrolled navmenu--visible">
+                {% for option in navOptions %}
+                    <a class="navoption navoption--nonscrolled" id="navoption" href="{{option.link}}">{{option.text}}</a>
+                {% endfor %}
+            </div>
+        </nav>
+    {% else %}
+        <nav id="navigation" class="navigation navigation--scrolled">
+            <div>
+                <a href=""><img class="logo" id="navlogo" src="images/logo-blacktext.png"></a>
+            </div>
+            <div id="hamburger" class="hamburger hamburger--scrolled"></div>
+            <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
+                {% for option in navOptions %}
+                    <a class="navoption navoption--scrolled" id="navoption" href="{{option.link}}">{{option.text}}</a>
+                {% endfor %}
+            </div>
+        </nav>
+    {% endif %}
+{% else %}
+    <nav id="navigation" class="navigation navigation--scrolled">
+        <div>
+            <a href=""><img class="logo" id="navlogo" src="images/logo-blacktext.png"></a>
+        </div>
+        <div id="hamburger" class="hamburger hamburger--scrolled"></div>
+        <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
+            {% for option in navOptions %}
+                <a class="navoption navoption--scrolled" id="navoption" href="{{option.link}}">{{option.text}}</a>
+            {% endfor %}
+        </div>
+    </nav>
+{% endif %}
