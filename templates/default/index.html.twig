@@ -5,64 +5,68 @@
 {% block title %}De Werkplaats{% endblock %}
 
 {% block body %}
-    <div class="header">
-        <div class="headertext">
-            <span style="font-size: 52px;">Dutch Innovation <br/>Factory</span>
-            <p>Integer est dolor, tempor vitae congue dignissim, euismod sit amet magna. Vivamus porttitor urna ornare tortor commodo, nec congue ante iaculis. Pellentesque id.</p>
-            <button class="button--readmore--header">LEES MEER</button>
-        </div>
-        <div class="headervideo">
-            <video width="300" controls>
-                <source src="{{ asset('images/video.mp4') }}" type="video/mp4">
-            </video>
-        </div>
-    </div>
+    {% include 'components/header.html.twig'
+        with {
+            title:"Dutch Innovation Factory",
+            text:"Integer est dolor, tempor vitae congue dignissim, euismod sit amet magna. Vivamus porttitor urna ornare tortor commodo, nec congue ante iaculis. Pellentesque id.",
+            button:{
+                text:"Lees meer",
+                link:""
+            },
+            video:asset('images/video.mp4')
+        }
+    %}
 
-    <div class="carsection">
-        <div class="carcolumn">
-            <div class="carrow">
-                <img class="carimage" src="{{ asset('images/car.svg') }}">
-                <p class="cartitle">Lorem Ipsum is simply dummy</p>
-            </div>
-            <p class="cardesc">Contrary to popular belief, Lorem Ipsum is not simply random text. </p>
-        </div>
-        <div class="carcolumn">
-            <div class="carrow">
-                <img class="carimage" src="{{ asset('images/car.svg') }}">
-                <p class="cartitle">Lorem Ipsum is simply dummy</p>
-            </div>
-            <p class="cardesc">Contrary to popular belief, Lorem Ipsum is not simply random text. </p>
-        </div>
-        <div class="carcolumn">
-            <div class="carrow">
-                <img class="carimage" src="{{ asset('images/car.svg') }}">
-                <p class="cartitle">Lorem Ipsum is simply dummy</p>
-            </div>
-            <p class="cardesc">Contrary to popular belief, Lorem Ipsum is not simply random text. </p>
-        </div>
-    </div>
+    {% include 'components/carsection.html.twig'
+        with {
+            sections:[
+                {
+                    "icon": asset('images/car.svg'),
+                    "title": "Lorem Ipsum is simply dummy",
+                    "text":"Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "icon": asset('images/car.svg'),
+                    "title": "Lorem Ipsum is simply dummy",
+                    "text":"Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "icon": asset('images/car.svg'),
+                    "title": "Lorem Ipsum is simply dummy",
+                    "text":"Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+            ]
+        }
+    %}
 
-    <div class="videosection">
-        <video class="video" controls>
-            <source src="" type="video/mp4">
-            <source src="" type="video/ogg">
-            Your browser does not support HTML5 video.
-        </video>
-        <div class="videotext">
-            <p class="videotitle">De oplossing voor jouw onderneming</p>
-            <p class="videodesc">Door ICT-onderwijs, onderzoek, overheid  en bedrijven te verbinden in één gebouw ontstaat een broedplaats vol interactie en samenwerking. Zo creëren wij een innovatieve plek waar kennisdeling plaatsvindt, innovaties ontstaan en co-creaties geboren worden.
+    {% include 'components/videosection.html.twig'
+        with {
+            sections:[
+                {
+                    "video": "",
+                    "title": "De oplossing voor jouw onderneming",
+                    "text":"Door ICT-onderwijs, onderzoek, overheid en bedrijven te verbinden in één gebouw ontstaat een broedplaats vol interactie en samenwerking. Zo creëren wij een innovatieve plek waar kennisdeling plaatsvindt, innovaties ontstaan en co-creaties geboren worden. Daarmee is de Dutch Innovation Factory een Playground voor digital Innovators geworden. Een warm welkom met onze vraag aan jou “hoe wordt jij een Playground voor digital Innovators?”",
+                    "link": "",
+                    "linkText": "lees meer"
+                },
+            ]
+        }
+    %}
 
-            Daarmee is de Dutch Innovation Factory een Playground voor digital Innovators geworden. Een warm welkom met onze vraag aan jou “hoe wordt jij een Playground voor digital Innovators.
-            </p>
-            <button class="button--readmore--video">Lees meer</button>
-        </div>
-    </div>
-
-    <div class="partnerssection">
-        <p class="partnerstitle">In samenwerking met</p>
-        <div class="partnerscontainer">
-            <a href="https://hhs.nl"><img class="partnerlogo" src="{{ asset('images/HHS.svg') }}"></a>
-            <a href="https://mborijnland.nl"><img class="partnerlogo" src="{{ asset('images/Mborijnland.svg') }}"></a>
-        </div>
-    </div>
+    {% include 'components/partnerssection.html.twig'
+        with {
+            partners:[
+                {
+                    "image": asset('images/HHS.svg'),
+                    "name": "De Haagse Hogeschool",
+                    "link":"https://hhs.nl",
+                },
+                {
+                    "image": asset('images/Mborijnland.svg'),
+                    "name": "mboRijnland",
+                    "link":"https://mborijnland.nl",
+                },
+            ]
+        }
+    %}
 {% endblock %}
