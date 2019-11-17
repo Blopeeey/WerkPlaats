@@ -1,12 +1,12 @@
 <section class="carsection">
-    {% if sections is defined %}
-        {% for section in sections %}
+    {% if cars is defined %}
+        {% for car in cars %}
             <div class="carcolumn">
                 <div class="carrow">
-                    <img class="carimage" src="{{ section.icon }}">
-                    <p class="cartitle">{{ section.title }}</p>
+                    <img class="carimage" src="{{ car.icon }}">
+                    <p class="cartitle">{{ car.title }}</p>
                 </div>
-                <p class="cardesc">{{ section.text }}</p>
+                <p class="cardesc">{{ car.text }}</p>
             </div>
         {% endfor %}
     {% endif %}
