@@ -211,7 +211,7 @@ body section:nth-of-type(2n+1) {
     min-height: 300px;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -312,7 +312,7 @@ body section:nth-of-type(2n+1) {
     min-height: 300px;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -401,7 +401,7 @@ body section:nth-of-type(2n+1) {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .partnerstitle {
@@ -420,7 +420,7 @@ body section:nth-of-type(2n+1) {
 
 .partnerscontainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
