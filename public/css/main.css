@@ -271,7 +271,7 @@ body section:nth-of-type(2n+1) {
     font-style: normal;
     font-weight: 300;
     font-size: 1rem;
-    line-height: 120%;
+    line-height: 1.2rem;
     letter-spacing: 0.1em;
 }
 
@@ -353,8 +353,10 @@ body section:nth-of-type(2n+1) {
     font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 32px;
-    line-height: 37px;
+    font-size: 2rem;
+    line-height: 2rem;
+
+    margin: 0;
 
     text-transform: uppercase;
 }
@@ -363,8 +365,8 @@ body section:nth-of-type(2n+1) {
     font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1rem;
+    line-height: 1.2rem;
 }
 
 .button--readmore--video {
@@ -375,7 +377,7 @@ body section:nth-of-type(2n+1) {
     font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 18px;
 
     text-transform: uppercase;
@@ -384,22 +386,24 @@ body section:nth-of-type(2n+1) {
     padding: 10px 50px;
 }
 
-@media screen and (max-width: 950px) {
-    .videosection {
-        min-height: 300px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+@media screen and (max-width: 1000px) {
+    .videosection .videocolumn:nth-of-type(2n), .videosection .videocolumn:nth-of-type(2n+1) {
+        flex-direction: column-reverse;
     }
 
     .video {
         width: 80%;
+        margin: 2rem;
     }
 
     .videotext {
         width: 80%;
+        margin: 2rem;
+    }
+
+    .videodesc {
+        font-size: 1.3rem;
+        line-height: 1.5rem;
     }
 }
 /*

@@ -1,4 +1,4 @@
-import { hamburger, navMenu } from "./globalvars.js";
+import { hamburger, nav, navMenu, navOptions } from "./globalvars.js";
 let hamburgerClicked = false; // whether the hamburger menu is active or not
 
 /*
@@ -10,6 +10,24 @@ hamburger.addEventListener('click', function (event) {
         navMenu.classList.add("navmenu--visible");
         navMenu.classList.remove("navmenu--invisible");
         hamburgerClicked = true;
+
+        /*
+        * Make sure the menu turns opaque to prevent overlapping text
+        */
+        nav.classList.add("navigation--scrolled");
+        nav.classList.remove("navigation--nonscrolled");
+
+        navMenu.classList.add("navmenu--scrolled");
+        navMenu.classList.remove("navmenu--nonscrolled");
+
+        hamburger.classList.add("hamburger--scrolled");
+        hamburger.classList.remove("hamburger--nonscrolled");
+
+        navlogo.src = "images/logo-blacktext.png";
+        for (let i = 0; i < navOptions.length; ++i) {
+            navOptions[i].classList.add("navoption--scrolled");
+            navOptions[i].classList.remove("navoption--nonscrolled");
+        }
     }
     else {
         navMenu.classList.add("navmenu--invisible");
