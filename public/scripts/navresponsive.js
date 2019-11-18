@@ -23,7 +23,7 @@ hamburger.addEventListener('click', function (event) {
 */
 window.addEventListener('resize', function (event) {
     event.preventDefault();
-    if (window.innerWidth >= 800) {
+    if (window.innerWidth >= 1000) {
         navMenu.classList.add("navmenu--visible");
         navMenu.classList.remove("navmenu--invisible");
     }
@@ -39,7 +39,7 @@ window.addEventListener('resize', function (event) {
 */
 window.addEventListener('load', function (event) {
     event.preventDefault();
-    if (window.innerWidth >= 800) {
+    if (window.innerWidth >= 1000) {
         navMenu.classList.add("navmenu--visible");
         navMenu.classList.remove("navmenu--invisible");
     }
