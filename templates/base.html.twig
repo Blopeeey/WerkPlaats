@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
     <head>
         <meta charset="UTF-8">
+        <meta name="language" content="NL">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {% include 'components/nav.html.twig' with {navType:navType} %}
-        {% block body %}
-        {% endblock %}
+        <div class="content" role="main">
+            {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}{% endblock %}
         {#
         # determine navigation type

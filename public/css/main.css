@@ -192,10 +192,6 @@ body section:nth-of-type(2n+1) {
     cursor: pointer;
 }
 
-.headervideo video {
-    height: 100%;
-}
-
 @media screen and (max-width: 1000px) {
     .header{
         flex-direction: column;

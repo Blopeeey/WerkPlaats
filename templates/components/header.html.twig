@@ -1,18 +1,10 @@
 <section class="header">
     <div class="headertext">
         <h1>
-            {% if title is defined %}
-                {{ title }}
-            {% else %}
-                Exception: title undefined
-            {% endif %}
+            {{ title }}
         </h1>
         <p>
-            {% if text is defined %}
-                {{ text }}
-            {% else %}
-                Exception: text undefined
-            {% endif %}
+            {{ text }}
         </p>
         {% if button.link is defined %}
             <a href="{{button.link}}">
@@ -26,13 +18,12 @@
             </a>
         {% endif %}
     </div>
-    {% if video is defined %}
-        <div class="headervideo">
-            <video controls>
-                <source src="{{ video }}" type="video/mp4">
-            </video>
-        </div>
-    {% else %}
-        <div></div>
+        {% if video is defined %}
+            <div class="headervideo">
+                {% include 'components/video.html.twig'
+                    with {video:video}
+                %}
+            </div>
+        {% else %}
     {% endif %}
 </section>
