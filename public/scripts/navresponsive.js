@@ -1,4 +1,4 @@
-import { hamburger, nav, navMenu, navOptions } from "./globalvars.js";
+import { hamburger, nav, navMenu, navOptions, navBreakPoint } from "./globalvars.js";
 let hamburgerClicked = false; // whether the hamburger menu is active or not
 
 /*
@@ -41,7 +41,7 @@ hamburger.addEventListener('click', function (event) {
 */
 window.addEventListener('resize', function (event) {
     event.preventDefault();
-    if (window.innerWidth >= 1000) {
+    if (window.innerWidth >= navBreakPoint) {
         navMenu.classList.add("navmenu--visible");
         navMenu.classList.remove("navmenu--invisible");
     }
@@ -57,11 +57,22 @@ window.addEventListener('resize', function (event) {
 */
 window.addEventListener('load', function (event) {
     event.preventDefault();
-    if (window.innerWidth >= 1000) {
+    if (window.innerWidth >= navBreakPoint) {
         navMenu.classList.add("navmenu--visible");
         navMenu.classList.remove("navmenu--invisible");
     }
     else {
+        navMenu.classList.add("navmenu--invisible");
+        navMenu.classList.remove("navmenu--visible");
+        hamburgerClicked = false;
+    }
+});
+
+/*
+* hide the nav menu on scroll
+*/
+window.addEventListener('scroll', function (event) {
+    if (window.innerWidth < navBreakPoint) {
         navMenu.classList.add("navmenu--invisible");
         navMenu.classList.remove("navmenu--visible");
         hamburgerClicked = false;
