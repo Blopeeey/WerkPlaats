@@ -16,6 +16,12 @@
                 {% for option in navOptions %}
                     <a class="navoption navoption--nonscrolled" href="{{ option.link }}">{{option.text}}</a>
                 {% endfor %}
+                {% if app.user %}
+                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_security_logout') }}">Log out</a>
+                {% else %}
+                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_security_login') }}">Log in</a>
+                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_registration_register') }}">Register</a>
+                {% endif %}
             </div>
         </nav>
     {% else %}
@@ -28,6 +34,12 @@
                 {% for option in navOptions %}
                     <a class="navoption navoption--scrolled" href="{{ option.link }}">{{option.text}}</a>
                 {% endfor %}
+                {% if app.user %}
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_logout') }}">Log out</a>
+                {% else %}
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">Log in</a>
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_registration_register') }}">Register</a>
+                {% endif %}
             </div>
         </nav>
     {% endif %}
@@ -41,6 +53,12 @@
             {% for option in navOptions %}
                 <a class="navoption navoption--scrolled" href="{{ option.link }}">{{option.text}}</a>
             {% endfor %}
+            {% if app.user %}
+                <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_logout') }}">Log out</a>
+            {% else %}
+                <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">Log in</a>
+                <a class="navoption navoption--scrolled" href="{{ path('fos_user_registration_register') }}">Register</a>
+            {% endif %}
         </div>
     </nav>
 {% endif %}
