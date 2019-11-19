@@ -1,0 +1,105 @@
+{% block body %}
+<style>
+    @font-face {
+        font-family: Karla;
+        src: url("{{ asset('fonts/Karla-Regular.ttf') }}");
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 1.5%;
+        padding-bottom: 1.5%;
+        position: absolute;
+        z-index: 2;
+        background-color: white;
+    }
+
+    .navmenu {
+        width: 25%;
+        min-width: 500px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navmenu a {
+        font-family: "Karla", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 800px) {
+        nav {
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .navmenu {
+            margin-top: 10px;
+            width: 100px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .navmenu {
+            margin-top: 10px;
+            width: 100px;
+            flex-direction: column;
+            justify-content: left;
+            align-items: flex-start;
+        }
+    }
+
+    .header p{
+        font-size: 20px;
+        line-height: 23px;
+        font-weight: lighter;
+        align-items: center;
+        letter-spacing: 0.1em;
+    }
+
+    .logo {
+        height: 70px;
+    }
+
+    .black{
+        background-color: #383838;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+</style>
+
+    <nav id="nav">
+        <div>
+            <a href=""><img class="logo" src="{{ asset('images/logo-blacktext.png.png') }}"></a>
+        </div>
+        <div class="navmenu">
+            <a href="{{ path('home') }}">Home</a>
+            <a href="{{ path('about') }}">Over de DIF</a>
+            <a href="">Vragenlijst</a>
+        </div>
+    </nav>
+
+    <div class="black">
+
+    </div>
+
+{% endblock %}

@@ -1,112 +1,134 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}De WerkPlaats{% endblock %}
+{% set navType = 'header' %}
+
+{% block title %}De Werkplaats{% endblock %}
 
 {% block body %}
-    <style>
-        body{
-            background-image: url("{{ asset('images/background.jpg') }}");
-            background-size: cover;
-            background-repeat: no-repeat;
+    {% include 'components/header.html.twig'
+        with {
+            title:"Dutch Innovation Factory",
+            text:"Integer est dolor, tempor vitae congue dignissim, euismod sit amet magna. Vivamus porttitor urna ornare tortor commodo, nec congue ante iaculis. Pellentesque id.",
+            button:{
+                text:"Lees meer",
+                link:""
+            },
+            video:{
+                files:[
+                    {
+                        "file": asset(''),
+                        "type": "mp4"
+                    },
+                    {
+                        "file": asset(''),
+                        "type": "ogg"
+                    },
+                ],
+                captions:[
+                    {
+                        "file": asset(''),
+                        "lang": "en"
+                    },
+                    {
+                        "file": asset(''),
+                        "lang": "nl"
+                    },
+                ],
+                descriptions:[
+                    {
+                        "file": asset(''),
+                        "lang": "en"
+                    },
+                    {
+                        "file": asset(''),
+                        "lang": "nl"
+                    },
+                ]
+            }
         }
+    %}
 
-        nav{
-
+    {% include 'components/carsection.html.twig'
+        with {
+            cars:[
+                {
+                    "icon": asset('images/car.svg'),
+                    "title": "Lorem Ipsum is simply dummy",
+                    "text":"Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "icon": asset('images/car.svg'),
+                    "title": "Lorem Ipsum is simply dummy",
+                    "text":"Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "icon": asset('images/car.svg'),
+                    "title": "Lorem Ipsum is simply dummy",
+                    "text":"Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+            ]
         }
+    %}
 
-        ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
+    {% include 'components/videosection.html.twig'
+        with {
+            videos:[
+                {
+                    video:{
+                        files:[
+                            {
+                                "file": asset(''),
+                                "type": "mp4"
+                            },
+                            {
+                                "file": asset(''),
+                                "type": "ogg"
+                            },
+                        ],
+                        captions:[
+                            {
+                                "file": asset(''),
+                                "lang": "en"
+                            },
+                            {
+                                "file": asset(''),
+                                "lang": "nl"
+                            },
+                        ],
+                        descriptions:[
+                            {
+                                "file": asset(''),
+                                "lang": "en"
+                            },
+                            {
+                                "file": asset(''),
+                                "lang": "nl"
+                            },
+                        ]
+                    },
+                    "title": "De oplossing voor jouw onderneming",
+                    "text":"Door ICT-onderwijs, onderzoek, overheid en bedrijven te verbinden in één gebouw ontstaat een broedplaats vol interactie en samenwerking. Zo creëren wij een innovatieve plek waar kennisdeling plaatsvindt, innovaties ontstaan en co-creaties geboren worden. Daarmee is de Dutch Innovation Factory een Playground voor digital Innovators geworden. Een warm welkom met onze vraag aan jou “hoe wordt jij een Playground voor digital Innovators?”",
+                    "link": "",
+                    "linkText": "lees meer"
+                },
+            ]
         }
+    %}
 
-        li{
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 30px;
-            text-decoration: none;
-            float: left;
-            font-size: 20px;
-            font-family: 'Karla', sans-serif;
+    {% include 'components/partnerssection.html.twig'
+        with {
+            partners:[
+                {
+                    "image": asset('images/HHS.svg'),
+                    "name": "De Haagse Hogeschool",
+                    "link":"https://hhs.nl",
+                },
+                {
+                    "image": asset('images/Mborijnland.svg'),
+                    "name": "mboRijnland",
+                    "link":"https://mborijnland.nl",
+                },
+            ]
         }
-
-        .RightNav li a{
-            text-decoration: none;
-            color: #FFFFFF;
-        }
-
-        .RightNav li a:hover{
-            text-decoration: none;
-            color: lightgoldenrodyellow;
-        }
-
-        .RightNav{
-            margin: 10px 200px;
-        }
-
-        .LeftNav{
-            margin: 0 200px;
-        }
-
-        .content{
-            font-family: 'Karla', sans-serif;
-            color: white;
-            width: 477px;
-            height: 122px;
-            margin: 8% 18%;
-        }
-
-        .content p{
-            font-size: 20px;
-            line-height: 23px;
-            font-weight: lighter;
-            align-items: center;
-            letter-spacing: 0.1em;
-        }
-
-        .leesmeer{
-            border: none;
-            background-color: #D9C900;
-            width: 200px;
-            height: 50px;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 15px;
-        }
-
-        .video{
-            display: flex;
-            margin: -17% 65%;
-        }
-    </style>
-
-    <nav>
-        <ul>
-            <div class="LeftNav">
-                <li style="position: absolute;"><img src="{{ asset('images/logo.svg') }}" width="62px"></li>
-                <li style="text-align: left; font-size: 20px; margin: 0 80px;">Dutch<br/> Innovation<br/> Factory</li>
-            </div>
-            <div class="RightNav">
-                <li style="float: right;"><a href="">Vragenlijst</a></li>
-                <li style="float: right;"><a href="">Over de DIF</a></li>
-                <li style="float: right;"><a href="">Home</a></li>
-            </div>
-        </ul>
-    </nav>
-
-    <div class="content">
-        <span style="font-size: 52px;">Dutch Innovation <br/>Factory</span>
-        <p>Integer est dolor, tempor vitae congue dignissim, euismod sit amet magna. Vivamus porttitor urna ornare tortor commodo, nec congue ante iaculis. Pellentesque id.</p>
-        <button class="leesmeer">LEES MEER</button>
-    </div>
-
-    <div class="video">
-        <video width="300" controls>
-            <source src="{{ asset('images/video.mp4') }}" type="video/mp4">
-        </video>
-    </div>
-
-
+    %}
 {% endblock %}
