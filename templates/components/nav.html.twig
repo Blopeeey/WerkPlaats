@@ -1,7 +1,7 @@
 {% set navOptions = [
-    {"text": "Home", "link":"home"},
-    {"text": "Over de DIF", "link":"about"},
-    {"text": "Vragenlijst", "link":"fillsurvey"},
+    {"text": "Home", "link": path('home')},
+    {"text": "Over de DIF", "link": path('about')},
+    {"text": "Vragenlijst", "link": path('fillsurvey')},
 ]
 %}
 
@@ -14,7 +14,7 @@
             <div id="hamburger" class="hamburger hamburger--nonscrolled"></div>
             <div id="navMenu" class="navmenu navmenu-nonscrolled navmenu--visible">
                 {% for option in navOptions %}
-                    <a class="navoption navoption--nonscrolled" href="{{ path(option.link) }}">{{option.text}}</a>
+                    <a class="navoption navoption--nonscrolled" href="{{ option.link }}">{{option.text}}</a>
                 {% endfor %}
             </div>
         </nav>
@@ -26,7 +26,7 @@
             <div id="hamburger" class="hamburger hamburger--scrolled"></div>
             <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
                 {% for option in navOptions %}
-                    <a class="navoption navoption--scrolled" href="{{ path(option.link) }}">{{option.text}}</a>
+                    <a class="navoption navoption--scrolled" href="{{ option.link }}">{{option.text}}</a>
                 {% endfor %}
             </div>
         </nav>
@@ -39,7 +39,7 @@
         <div id="hamburger" class="hamburger hamburger--scrolled"></div>
         <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
             {% for option in navOptions %}
-                <a class="navoption navoption--scrolled" href="{{ path(option.link) }}">{{option.text}}</a>
+                <a class="navoption navoption--scrolled" href="{{ option.link }}">{{option.text}}</a>
             {% endfor %}
         </div>
     </nav>
