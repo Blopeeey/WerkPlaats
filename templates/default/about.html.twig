@@ -1,128 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% set navType = 'default' %}
+
+{% block title %}De Werkplaats{% endblock %}
+
 {% block body %}
-<style>
-    @font-face {
-        font-family: Karla;
-        src: url("{{ asset('fonts/Karla-Regular.ttf') }}");
-    }
-
-    html, body {
-        margin: 0;
-        padding: 0;
-    }
-
-    body{
-
-    }
-
-    nav {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding-top: 1.5%;
-        padding-bottom: 1.5%;
-        position: absolute;
-        z-index: 2;
-        background-color: white;
-    }
-
-    .navmenu {
-        width: 25%;
-        min-width: 500px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .navmenu a {
-        font-family: "Karla", sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        color: black;
-        text-decoration: none;
-    }
-
-    @media screen and (max-width: 800px) {
-        nav {
-            align-items: flex-start;
-            flex-direction: column;
-            padding: 10px;
-        }
-
-        .navmenu {
-            margin-top: 10px;
-            width: 100px;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        .navmenu {
-            margin-top: 10px;
-            width: 100px;
-            flex-direction: column;
-            justify-content: left;
-            align-items: flex-start;
-        }
-    }
-
-    .header p{
-        font-size: 20px;
-        line-height: 23px;
-        font-weight: lighter;
-        align-items: center;
-        letter-spacing: 0.1em;
-    }
-
-    .logo {
-        height: 70px;
-    }
-
-    .black{
-        background-color: #383838;
-        width: 50%;
-        height: 100%;
-        position: absolute;
-        z-index: 1;
-    }
-
-    .black p{
-        color: white;
-        margin: 50% 25%;
-        font-family: Karla;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 150%;
-    }
-
-    .white{
-        margin: 0 -50%;
-    }
-</style>
-
-    <nav id="nav">
-        <div>
-            <a href=""><img class="logo" src="{{ asset('images/logo-blacktext.png.png') }}"></a>
+    <div class="aboutcontainer">
+        <div class="black">
+            <p class="abouttext">
+            Dutch Innovation Factory<br/>
+            079 – 820 03 96<br/>
+            Bleiswijkseweg 37 2712 PB Zoetermeer<br/>
+            info@dutchinnovationfactory.nl
+            </p>
         </div>
-        <div class="navmenu">
-            <a href="{{ path('home') }}">Home</a>
-            <a href="{{ path('about') }}">Over de DIF</a>
-            <a href="">Vragenlijst</a>
+        <div class="white">
+            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.8299060595086!2d4.5126747157574325!3d52.046410779727246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5cec429a6395f%3A0x13e973bd0ecd70c!2sDutch%20Innovation%20Factory!5e0!3m2!1snl!2snl!4v1574160844718!5m2!1snl!2snl" frameborder="0" style="border:0" allowfullscreen=""></iframe>
         </div>
-    </nav>
-
-    <div class="black">
-        <p>
-        Dutch Innovation Factory<br/>
-        079 – 820 03 96<br/>
-        Bleiswijkseweg 37 2712 PB Zoetermeer<br/>
-        info@dutchinnovationfactory.nl
-        </p>
     </div>
-
-    <div class="white">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.8299060595086!2d4.5126747157574325!3d52.046410779727246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5cec429a6395f%3A0x13e973bd0ecd70c!2sDutch%20Innovation%20Factory!5e0!3m2!1snl!2snl!4v1574160844718!5m2!1snl!2snl" width="50%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-    </div>
-
 {% endblock %}
