@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% set navType = 'default' %}
+
+{% block title %}De Werkplaats{% endblock %}
+
+{% block body %}
+    <div class="surveycontainer">
+        <div class="questioncontainer">
+            <p class="question">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</p>
+            <form>
+                <input type="radio" name="testradio"> <span class="optiontext">In enim justo</span><br />
+                <input type="radio" name="testradio"> <span class="optiontext">In enim justo</span><br />
+                <input type="radio" name="testradio"> <span class="optiontext">In enim justo</span><br />
+                <input type="radio" name="testradio"> <span class="optiontext">In enim justo</span><br />
+            </form>
+        </div>
+        <div class="surveycontrols">
+            <button class="button--controls--survey">Previous</button>
+            <button class="button--controls--survey">Next</button>
+        </div>
+    </div>
+{% endblock %}
