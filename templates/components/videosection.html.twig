@@ -2,10 +2,9 @@
     {% if videos is defined %}
         {% for video in videos %}
             <div class="videocolumn">
-                <video class="video" controls>
-                    <source src="{{ video.video }}" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                </video>
+                {% include 'components/video.html.twig'
+                    with {video:video.video}
+                %}
                 <div class="videotext">
                     {% if video.title is defined %}
                         <p class="videotitle">

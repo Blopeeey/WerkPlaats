@@ -6,7 +6,7 @@ import { nav , navLogo, navOptions, hamburger, navMenu } from "./globalvars.js";
 window.addEventListener('scroll', function (event) {
     event.preventDefault();
 
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 1) {
         nav.classList.add("navigation--scrolled");
         nav.classList.remove("navigation--nonscrolled");
 
