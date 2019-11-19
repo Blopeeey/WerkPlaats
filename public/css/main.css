@@ -15,14 +15,17 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: "Karla", sans-serif;
 }
 
 h1 {
-<<<<<<< HEAD
+
     padding-top: 10%;
 =======
 >>>>>>> e9bcb9c6f9013f61bb63d0ec92f994999201abfe
     font-family: "Karla", sans-serif;
+=======
+>>>>>>> 3129479986554327ad4d9814f64500d0d4693271
     font-weight: normal;
     font-size: 3rem;
 }
@@ -79,7 +82,6 @@ body section:nth-of-type(2n+1) {
 }
 
 .navoption {
-    font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 1rem;
@@ -132,7 +134,7 @@ body section:nth-of-type(2n+1) {
         padding-bottom: 10px;
         display: none;
     }
-   
+
     .navmenu--visible {
         display: flex;
     }
@@ -154,7 +156,6 @@ body section:nth-of-type(2n+1) {
 * header
 */
 .header{
-    font-family: 'Karla', sans-serif;
     color: #FFFFFF;
     width: 100%;
     min-height: 60vh;
@@ -253,7 +254,6 @@ body section:nth-of-type(2n+1) {
     margin-top: 0;
     margin-bottom: 0;
 
-    font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 1.2rem;
@@ -362,7 +362,6 @@ body section:nth-of-type(2n+1) {
 }
 
 .videodesc {
-    font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 1rem;
@@ -374,7 +373,6 @@ body section:nth-of-type(2n+1) {
     border: none;
     border-radius: 50px;
 
-    font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 1rem;
@@ -424,7 +422,6 @@ body section:nth-of-type(2n+1) {
 }
 
 .partnerstitle {
-    font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 42px;
@@ -457,3 +454,84 @@ body section:nth-of-type(2n+1) {
 /*
 * end partners section
 /*
+
+/*
+* footer
+*/
+.footer {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2.5rem;
+
+    background-color: #000000;
+
+    color: #FFFFFF;
+}
+
+.footerrow {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4.5rem;
+}
+
+.footercolumn {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100%/3);
+    padding-left: 5rem;
+    padding-right: 5rem;
+    align-content: flex-start;
+}
+
+.footercolumn--logo {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    align-content: flex-start;
+}
+
+.footerlogo {
+    width: 200px;
+}
+
+.footertitle {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.footerlist {
+    padding: 0;
+    list-style-type: none;
+}
+
+.footerlist li a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    .footerrow {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footercolumn, .footercolumn--logo {
+        padding: 0;
+        width: auto;
+        max-width: 30rem;
+        width: 50%;
+    }
+}
+/*
+* end footer
+*/
