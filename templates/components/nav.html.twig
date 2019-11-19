@@ -1,7 +1,7 @@
 {% set navOptions = [
-    {"text": "Home", "link":"/"},
-    {"text": "Over de DIF", "link":"/about"},
-    {"text": "Vragenlijst", "link":"/survey"},
+    {"text": "Home", "link":"home"},
+    {"text": "Over de DIF", "link":"about"},
+    {"text": "Vragenlijst", "link":"fillsurvey"},
 ]
 %}
 
@@ -9,24 +9,24 @@
     {% if navType == "header"%}
         <nav id="navigation" class="navigation navigation--nonscrolled" role="navigation">
             <div>
-                <a href="/"><img class="logo" id="navlogo" src="images/logo.png" alt="logo"></a>
+                <a href="{{ path('home') }}"><img class="logo" id="navlogo" src="{{ asset('images/logo-blacktext.png') }}" alt="logo"></a>
             </div>
             <div id="hamburger" class="hamburger hamburger--nonscrolled"></div>
             <div id="navMenu" class="navmenu navmenu-nonscrolled navmenu--visible">
                 {% for option in navOptions %}
-                    <a class="navoption navoption--nonscrolled" href="{{option.link}}">{{option.text}}</a>
+                    <a class="navoption navoption--nonscrolled" href="{{ path(option.link) }}">{{option.text}}</a>
                 {% endfor %}
             </div>
         </nav>
     {% else %}
         <nav id="navigation" class="navigation navigation--scrolled" role="navigation">
             <div>
-                <a href="/"><img class="logo" id="navlogo" src="images/logo-blacktext.png" alt="logo"></a>
+                <a href="{{ path('home') }}"><img class="logo" id="navlogo" src="{{ asset('images/logo-blacktext.png') }}" alt="logo"></a>
             </div>
             <div id="hamburger" class="hamburger hamburger--scrolled"></div>
             <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
                 {% for option in navOptions %}
-                    <a class="navoption navoption--scrolled" href="{{option.link}}">{{option.text}}</a>
+                    <a class="navoption navoption--scrolled" href="{{ path(option.link) }}">{{option.text}}</a>
                 {% endfor %}
             </div>
         </nav>
@@ -34,12 +34,12 @@
 {% else %}
     <nav id="navigation" class="navigation navigation--scrolled" role="navigation">
         <div>
-            <a href="/"><img class="logo" id="navlogo" src="images/logo-blacktext.png" alt="logo"></a>
+            <a href="{{ path('home') }}"><img class="logo" id="navlogo" src="{{ asset('images/logo-blacktext.png') }}" alt="logo"></a>
         </div>
         <div id="hamburger" class="hamburger hamburger--scrolled"></div>
         <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
             {% for option in navOptions %}
-                <a class="navoption navoption--scrolled" href="{{option.link}}">{{option.text}}</a>
+                <a class="navoption navoption--scrolled" href="{{ path(option.link) }}">{{option.text}}</a>
             {% endfor %}
         </div>
     </nav>

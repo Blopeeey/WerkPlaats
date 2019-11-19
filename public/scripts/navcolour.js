@@ -16,7 +16,7 @@ window.addEventListener('scroll', function (event) {
         hamburger.classList.add("hamburger--scrolled");
         hamburger.classList.remove("hamburger--nonscrolled");
 
-        navlogo.src = "images/logo-blacktext.png";
+        navlogo.src = "/images/logo-blacktext.png";
         for (let i = 0; i < navOptions.length; ++i) {
             navOptions[i].classList.add("navoption--scrolled");
             navOptions[i].classList.remove("navoption--nonscrolled");
@@ -31,7 +31,7 @@ window.addEventListener('scroll', function (event) {
         hamburger.classList.add("hamburger--nonscrolled");
         hamburger.classList.remove("hamburger--scrolled");
 
-        navlogo.src = "images/logo.png";
+        navlogo.src = "/images/logo.png";
         for (let i = 0; i < navOptions.length; ++i) {
             navOptions[i].classList.add("navoption--nonscrolled");
             navOptions[i].classList.remove("navoption--scrolled");
