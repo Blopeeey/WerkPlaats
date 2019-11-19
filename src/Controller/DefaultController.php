@@ -26,4 +26,14 @@ class DefaultController extends AbstractController
 
         ]);
     }
+
+    /**
+     * @Route("/survey", name="survey")
+     */
+     public function survey()
+     {
+         return $this->render('default/survey.html.twig', [
+ 
+         ]);
+     }
 }

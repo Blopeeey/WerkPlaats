@@ -19,8 +19,8 @@ html, body {
 }
 
 h1 {
+
     padding-top: 10%;
-    font-family: "Karla", sans-serif;
     font-weight: normal;
     font-size: 3rem;
 }
@@ -190,6 +190,12 @@ body section:nth-of-type(2n+1) {
     text-transform: uppercase;
 
     cursor: pointer;
+}
+
+.headervideo iframe {
+    width: 640px;
+    height: 360px;
+
 }
 
 @media screen and (max-width: 1000px) {
@@ -529,4 +535,71 @@ body section:nth-of-type(2n+1) {
 }
 /*
 * end footer
+*/
+
+/*
+* survey
+*/
+.surveycontainer {
+    width: 100%;
+
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.questioncontainer {
+    background-color: #FFFFFF;
+    width: 80%;
+    min-height: 500px;
+    padding: 2rem;
+    border-radius: 10px; 
+}
+
+.question {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.optiontext {
+    font-size: 1.5rem;
+}
+
+.surveycontrols {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.button--controls--survey {
+    width: 12rem;
+
+    background-color: #FEED02;
+    border: none;
+    border-radius: 50px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 18px;
+    text-align: center;
+
+    text-transform: uppercase;
+    cursor: pointer;
+
+    padding: 20px 50px;
+}
+/*
+* end survey
 */
