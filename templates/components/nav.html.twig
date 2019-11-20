@@ -8,8 +8,8 @@
 {% if navType is defined %}
     {% if navType == "header"%}
         <nav id="navigation" class="navigation navigation--nonscrolled" role="navigation">
-            <div>
-                <a href="{{ path('home') }}"><img class="logo" id="navlogo" src="{{ asset('images/logo-blacktext.png') }}" alt="logo"></a>
+            <div class="logocontainer--nav">
+                <a href="{{ path('home') }}"><img class="logo" id="navlogo" src="{{ asset('images/logo.png') }}" alt="logo"></a>
             </div>
             <div id="hamburger" class="hamburger hamburger--nonscrolled"></div>
             <div id="navMenu" class="navmenu navmenu-nonscrolled navmenu--visible">
