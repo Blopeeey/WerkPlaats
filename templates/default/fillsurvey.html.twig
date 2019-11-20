@@ -9,10 +9,22 @@
         <div class="questioncontainer">
             <p class="question">{{ question.description }}?</p>
             <form>
-                <input type="checkbox" name="testradio"> <span class="optiontext">In enim justo</span><br />
-                <input type="checkbox" name="testradio"> <span class="optiontext">In enim justo</span><br />
-                <input type="checkbox" name="testradio"> <span class="optiontext">In enim justo</span><br />
-                <input type="checkbox" name="testradio"> <span class="optiontext">In enim justo</span><br />
+                <label class="container">In enim justo
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">In enim justo
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">In enim justo
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">In enim justo
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
             </form>
         </div>
             <form action="{{ path('fillsurvey', {id:id}) }}" method="post" class="surveycontrols">
