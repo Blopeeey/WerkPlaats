@@ -465,11 +465,8 @@ body section:nth-of-type(2n+1) {
 .footer {
     display: flex;
     flex-direction: column;
-
     padding: 2.5rem;
-
     background-color: #000000;
-
     color: #FFFFFF;
 }
 
@@ -616,8 +613,8 @@ body section:nth-of-type(2n+1) {
 
 .questioncontainer {
     background-color: #FFFFFF;
-    width: 80%;
-    min-height: 500px;
+    width: 60%;
+    min-height: 350px;
     padding: 2rem;
     border-radius: 10px; 
 }
@@ -632,7 +629,7 @@ body section:nth-of-type(2n+1) {
 }
 
 .surveycontrols {
-    width: 80%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
@@ -643,7 +640,7 @@ body section:nth-of-type(2n+1) {
 
     background-color: #FEED02;
     border: none;
-    border-radius: 50px;
+    border-radius: 40px;
 
     font-style: normal;
     font-weight: bold;
@@ -674,3 +671,11 @@ body section:nth-of-type(2n+1) {
 /*
 * end FOSUserBundle
 */
+
+.logos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+}

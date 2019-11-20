@@ -37,4 +37,8 @@ class Cat
 
         return $this;
     }
+
+    public function __ToString(){
+        return (string) $this->getType();
+    }
 }

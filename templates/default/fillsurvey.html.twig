@@ -7,17 +7,31 @@
 {% block body %}
     <div class="surveycontainer">
         <div class="questioncontainer">
-            <p class="question">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</p>
+            <p class="question">{{ question.description }}?</p>
             <form>
-                <input type="radio" name="testradio"> <span class="optiontext">In enim justo</span><br />
-                <input type="radio" name="testradio"> <span class="optiontext">In enim justo</span><br />
-                <input type="radio" name="testradio"> <span class="optiontext">In enim justo</span><br />
-                <input type="radio" name="testradio"> <span class="optiontext">In enim justo</span><br />
+                <input type="checkbox" name="testradio"> <span class="optiontext">In enim justo</span><br />
+                <input type="checkbox" name="testradio"> <span class="optiontext">In enim justo</span><br />
+                <input type="checkbox" name="testradio"> <span class="optiontext">In enim justo</span><br />
+                <input type="checkbox" name="testradio"> <span class="optiontext">In enim justo</span><br />
             </form>
         </div>
-        <div class="surveycontrols">
-            <button class="button--controls--survey">Vorige</button>
-            <button class="button--controls--survey">Volgende</button>
-        </div>
+            <form action="{{ path('fillsurvey', {id:id}) }}" method="post" class="surveycontrols">
+                {% if id > 1 %}
+                    <input type="submit" name="vorige" class="button--controls--survey" value="Vorige">
+                    <input class="button--controls--survey" type="submit" name="volgende" value="Volgende">
+                {% elseif id == 10 %}
+                    <input type="submit" name="vorige" class="button--controls--survey" value="Vorige">
+                    <input class="button--controls--survey" type="submit" name="volgende" value="Volgende" style="visibility: hidden">
+                {% else %}
+                    <input type="submit" name="vorige" class="button--controls--survey" style="visibility: hidden" value="Vorige">
+                    <input class="button--controls--survey" type="submit" name="volgende" value="Volgende">
+                {% endif %}
+            </form>
+    </div>
+
+    <div class="logos">
+        <img src="{{ asset('images/Mborijnland.svg') }}" width="200" height="100">
+        <img src="{{ asset('images/DIFLogo.svg') }}" width="200" height="100">
+        <img src="{{ asset('images/HHS.svg') }}" width="200" height="100">
     </div>
 {% endblock %}
