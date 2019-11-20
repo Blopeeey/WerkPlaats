@@ -28,11 +28,11 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/survey", name="survey")
+     * @Route("/fillsurvey", name="fillsurvey")
      */
-     public function survey()
+     public function fillsurvey()
      {
-         return $this->render('default/survey.html.twig', [
+         return $this->render('default/fillsurvey.html.twig', [
  
          ]);
      }

@@ -1,7 +1,7 @@
 {% set navOptions = [
-    {"text": "Home", "link":"/"},
-    {"text": "Over de DIF", "link":"/about"},
-    {"text": "Vragenlijst", "link":"/survey"},
+    {"text": "Home", "link": path('home')},
+    {"text": "Over de DIF", "link": path('about')},
+    {"text": "Vragenlijst", "link": path('fillsurvey')},
 ]
 %}
 
@@ -9,38 +9,63 @@
     {% if navType == "header"%}
         <nav id="navigation" class="navigation navigation--nonscrolled" role="navigation">
             <div>
-                <a href="/"><img class="logo" id="navlogo" src="images/logo.png" alt="logo"></a>
+                <a href="{{ path('home') }}"><img class="logo" id="navlogo" src="{{ asset('images/logo-blacktext.png') }}" alt="logo"></a>
             </div>
             <div id="hamburger" class="hamburger hamburger--nonscrolled"></div>
             <div id="navMenu" class="navmenu navmenu-nonscrolled navmenu--visible">
                 {% for option in navOptions %}
-                    <a class="navoption navoption--nonscrolled" href="{{option.link}}">{{option.text}}</a>
+                    <a class="navoption navoption--nonscrolled" href="{{ option.link }}">{{option.text}}</a>
                 {% endfor %}
+                        <div>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                {% else %}
+                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                {% endif %}
             </div>
         </nav>
     {% else %}
         <nav id="navigation" class="navigation navigation--scrolled" role="navigation">
             <div>
-                <a href="/"><img class="logo" id="navlogo" src="images/logo-blacktext.png" alt="logo"></a>
+                <a href="{{ path('home') }}"><img class="logo" id="navlogo" src="{{ asset('images/logo-blacktext.png') }}" alt="logo"></a>
             </div>
             <div id="hamburger" class="hamburger hamburger--scrolled"></div>
             <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
                 {% for option in navOptions %}
-                    <a class="navoption navoption--scrolled" href="{{option.link}}">{{option.text}}</a>
+                    <a class="navoption navoption--scrolled" href="{{ option.link }}">{{option.text}}</a>
                 {% endfor %}
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                {% else %}
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                {% endif %}
             </div>
         </nav>
     {% endif %}
 {% else %}
     <nav id="navigation" class="navigation navigation--scrolled" role="navigation">
         <div>
-            <a href="/"><img class="logo" id="navlogo" src="images/logo-blacktext.png" alt="logo"></a>
+            <a href="{{ path('home') }}"><img class="logo" id="navlogo" src="{{ asset('images/logo-blacktext.png') }}" alt="logo"></a>
         </div>
         <div id="hamburger" class="hamburger hamburger--scrolled"></div>
         <div id="navMenu" class="navmenu navmenu--scrolled navmenu--visible">
             {% for option in navOptions %}
-                <a class="navoption navoption--scrolled" href="{{option.link}}">{{option.text}}</a>
+                <a class="navoption navoption--scrolled" href="{{ option.link }}">{{option.text}}</a>
             {% endfor %}
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                {% else %}
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                {% endif %}
         </div>
     </nav>
 {% endif %}
