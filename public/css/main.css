@@ -659,3 +659,18 @@ body section:nth-of-type(2n+1) {
 /*
 * end survey
 */
+
+/*
+* FOSUserBuidel
+*/
+.login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/*
+* end FOSUserBundle
+*/

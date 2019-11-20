@@ -16,11 +16,14 @@
                 {% for option in navOptions %}
                     <a class="navoption navoption--nonscrolled" href="{{ option.link }}">{{option.text}}</a>
                 {% endfor %}
-                {% if app.user %}
-                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_security_logout') }}">Log out</a>
+                        <div>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
                 {% else %}
-                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_security_login') }}">Log in</a>
-                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_registration_register') }}">Register</a>
+                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                 {% endif %}
             </div>
         </nav>
@@ -34,11 +37,13 @@
                 {% for option in navOptions %}
                     <a class="navoption navoption--scrolled" href="{{ option.link }}">{{option.text}}</a>
                 {% endfor %}
-                {% if app.user %}
-                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_logout') }}">Log out</a>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
                 {% else %}
-                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">Log in</a>
-                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_registration_register') }}">Register</a>
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                 {% endif %}
             </div>
         </nav>
@@ -53,12 +58,14 @@
             {% for option in navOptions %}
                 <a class="navoption navoption--scrolled" href="{{ option.link }}">{{option.text}}</a>
             {% endfor %}
-            {% if app.user %}
-                <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_logout') }}">Log out</a>
-            {% else %}
-                <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">Log in</a>
-                <a class="navoption navoption--scrolled" href="{{ path('fos_user_registration_register') }}">Register</a>
-            {% endif %}
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                {% else %}
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                {% endif %}
         </div>
     </nav>
 {% endif %}
