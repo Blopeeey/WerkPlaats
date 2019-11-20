@@ -23,6 +23,7 @@
                     </a>
                 {% else %}
                     <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    <a class="navoption navoption--nonscrolled" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
                 {% endif %}
             </div>
         </nav>
@@ -43,6 +44,7 @@
                     </a>
                 {% else %}
                     <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
                 {% endif %}
             </div>
         </nav>
@@ -64,6 +66,7 @@
                     </a>
                 {% else %}
                     <a class="navoption navoption--scrolled" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    <a class="navoption navoption--scrolled" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
                 {% endif %}
         </div>
     </nav>
