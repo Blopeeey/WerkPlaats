@@ -668,6 +668,36 @@ body section:nth-of-type(2n+1) {
     align-items: center;
     flex-direction: column;
 }
+
+.inputfield--login {
+    width: 20rem;
+    height: 2rem;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.checkbox-div--login {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.loginbutton {
+    margin-top: 1rem;
+    background-color: #FEED02;
+    border: none;
+    border-radius: 50px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 18px;
+
+    text-transform: uppercase;
+    cursor: pointer;
+
+    padding: 10px 50px;
+}
 /*
 * end FOSUserBundle
 */
